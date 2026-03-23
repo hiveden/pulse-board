@@ -252,13 +252,13 @@ body {
   margin-bottom: 10px;
 }
 
-/* insight / route impact expand area */
+/* expand toggle button */
 .card-expand-toggle {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   font-size: 13px;
-  color: var(--text-3);
+  color: #58a6ff;
   background: none;
   border: none;
   cursor: pointer;
@@ -266,44 +266,92 @@ body {
   margin-bottom: 10px;
   transition: color .12s;
 }
-.card-expand-toggle:hover { color: var(--text-2); }
-.expand-arrow { transition: transform .2s; display: inline-block; font-size: 10px; }
-.expand-arrow.open { transform: rotate(90deg); }
+.card-expand-toggle:hover { color: #79c0ff; }
 
-.card-detail {
-  font-size: 13px;
-  color: var(--text-2);
-  background: var(--surface-inset);
-  border-top: 1px solid var(--border);
-  padding: 12px 16px;
-  line-height: 1.7;
-  display: none;
+/* ── Drawer backdrop ── */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
 }
-.card-detail.open { display: block; }
-.detail-label {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-3);
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.detail-section { margin-bottom: 10px; }
-.detail-section:last-child { margin-bottom: 0; }
+.drawer-backdrop.open { opacity: 1; visibility: visible; }
 
-/* ── Deep drawer ── */
-.card-deep {
-  font-size: 13px;
-  color: var(--text-2);
-  background: rgba(0,0,0,.15);
-  border-top: 1px solid var(--border);
-  line-height: 1.7;
-  max-height: 0;
+/* ── Right-side drawer ── */
+.drawer-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 480px;
+  height: 100vh;
+  z-index: 1000;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  box-shadow: -4px 0 24px rgba(0,0,0,.4);
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  transition: max-height .3s ease;
 }
-.card-deep.open { max-height: 2000px; }
-.card-deep-inner { padding: 14px 16px; }
+.drawer-panel.open { transform: translateX(0); }
+
+.drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.drawer-header-info { flex: 1; min-width: 0; }
+.drawer-header-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.drawer-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.drawer-header-source {
+  font-size: 12px;
+  color: var(--text-3);
+}
+.drawer-header-source a { color: #58a6ff; text-decoration: none; }
+.drawer-header-source a:hover { text-decoration: underline; }
+.drawer-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-bright);
+  background: transparent;
+  color: var(--text-2);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all .15s;
+}
+.drawer-close:hover { background: rgba(255,255,255,.06); color: var(--text); }
+
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+.drawer-body .deep-section { margin-bottom: 16px; }
+.drawer-body .deep-section:last-child { margin-bottom: 0; }
 
 .deep-section {
   border-left: 4px solid var(--border);
@@ -453,6 +501,21 @@ body {
 .status-badge.pushed  { background: rgba(63,185,80,.1); color: #3fb950; }
 .status-badge.skipped { background: rgba(72,79,88,.2); color: var(--text-3); }
 
+/* ── Drawer responsive ── */
+@media (max-width: 768px) {
+  .drawer-panel {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    height: 85vh;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    border-radius: 16px 16px 0 0;
+    transform: translateY(100%);
+  }
+  .drawer-panel.open { transform: translateY(0); }
+}
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   .header { padding: 12px; gap: 8px; }
@@ -529,6 +592,18 @@ body {
 </div>
 
 <div class="grid-wrap" id="gridWrap"></div>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="drawer-panel" id="drawerPanel">
+  <div class="drawer-header">
+    <div class="drawer-header-info">
+      <div class="drawer-header-title" id="drawerTitle"></div>
+      <div class="drawer-header-meta" id="drawerMeta"></div>
+    </div>
+    <button class="drawer-close" id="drawerClose">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</div>
 
 <script>
 // ─── Data ───────────────────────────────────────────────────────────────────
@@ -818,15 +893,8 @@ function cardHTML(d) {
     <div class="card-summary">${d.summary}</div>
     ${d.domain ? `<span class="card-domain">${d.domain}</span>` : ''}
     ${sourceHtml}
-    ${hasDetail ? `<button class="card-expand-toggle" data-expand="${d.id}">
-      <span class="expand-arrow">▶</span>
-      <span class="expand-label">深度分析</span>
-    </button>` : ''}
+    ${hasDetail ? `<button class="card-expand-toggle" data-expand="${d.id}">查看分析 →</button>` : ''}
   </div>
-  ${hasDeep ? deepDrawerHTML(d) : hasLegacyDetail ? `<div class="card-detail" id="detail-${d.id}">
-    ${d.insight ? `<div class="detail-section"><div class="detail-label">核心观点</div>${d.insight}</div>` : ''}
-    ${d.routeImpact ? `<div class="detail-section"><div class="detail-label">路线影响</div>${d.routeImpact}</div>` : ''}
-  </div>` : ''}
   <div class="card-actions">
     <button class="action-btn${st==='watching'?' on-watch':''}" data-act="watching" data-id="${d.id}">👀 关注</button>
     <button class="action-btn${st==='discussed'?' on-discuss':''}" data-act="discussed" data-id="${d.id}">💬 讨论</button>
@@ -837,38 +905,76 @@ function cardHTML(d) {
 </div>`;
 }
 
-function deepDrawerHTML(d) {
-  const dp = d.deep;
-  let sections = '';
-  if (dp.tldr) sections += `<div class="deep-section s-tldr"><div class="deep-section-title">TL;DR</div><div class="deep-section-body">${dp.tldr}</div></div>`;
-  if (dp.signal) sections += `<div class="deep-section s-signal"><div class="deep-section-title">📊 信号</div><div class="deep-section-body">${dp.signal}</div></div>`;
-  if (dp.analysis) sections += `<div class="deep-section s-analysis"><div class="deep-section-title">🔍 分析</div><div class="deep-section-body">${dp.analysis}</div></div>`;
-  if (dp.impact) sections += `<div class="deep-section s-impact"><div class="deep-section-title">🎯 路线影响</div><div class="deep-section-body">${dp.impact}</div></div>`;
-  if (dp.sources && dp.sources.length) {
-    const items = dp.sources.map(s => {
-      let label = s.note || s.title || s.handle || s.type;
-      let link = '';
-      if (s.url) {
-        link = `<a href="${s.url}" target="_blank" rel="noopener">${label}</a>`;
-      } else if (s.type === 'hn' && s.id) {
-        link = `<a href="https://news.ycombinator.com/item?id=${s.id}" target="_blank" rel="noopener">${label}${s.points ? ` (${s.points}pt/${s.comments}c)` : ''}</a>`;
-      } else {
-        link = `<span class="deep-source-note">${label}</span>`;
-      }
-      return `<div class="deep-source-item"><span class="deep-source-type">${s.type}</span>${link}</div>`;
-    }).join('');
-    sections += `<div class="deep-section s-sources"><div class="deep-section-title">📎 来源</div><div class="deep-section-body">${items}</div></div>`;
+function drawerContentHTML(d) {
+  const hasDeep = d.deep && (d.deep.tldr || d.deep.signal || d.deep.analysis || d.deep.impact || (d.deep.sources && d.deep.sources.length));
+  if (hasDeep) {
+    const dp = d.deep;
+    let sections = '';
+    if (dp.tldr) sections += `<div class="deep-section s-tldr"><div class="deep-section-title">TL;DR</div><div class="deep-section-body">${dp.tldr}</div></div>`;
+    if (dp.signal) sections += `<div class="deep-section s-signal"><div class="deep-section-title">📊 信号</div><div class="deep-section-body">${dp.signal}</div></div>`;
+    if (dp.analysis) sections += `<div class="deep-section s-analysis"><div class="deep-section-title">🔍 分析</div><div class="deep-section-body">${dp.analysis}</div></div>`;
+    if (dp.impact) sections += `<div class="deep-section s-impact"><div class="deep-section-title">🎯 路线影响</div><div class="deep-section-body">${dp.impact}</div></div>`;
+    if (dp.sources && dp.sources.length) {
+      const items = dp.sources.map(s => {
+        let label = s.note || s.title || s.handle || s.type;
+        let link = '';
+        if (s.url) {
+          link = `<a href="${s.url}" target="_blank" rel="noopener">${label}</a>`;
+        } else if (s.type === 'hn' && s.id) {
+          link = `<a href="https://news.ycombinator.com/item?id=${s.id}" target="_blank" rel="noopener">${label}${s.points ? ` (${s.points}pt/${s.comments}c)` : ''}</a>`;
+        } else {
+          link = `<span class="deep-source-note">${label}</span>`;
+        }
+        return `<div class="deep-source-item"><span class="deep-source-type">${s.type}</span>${link}</div>`;
+      }).join('');
+      sections += `<div class="deep-section s-sources"><div class="deep-section-title">📎 来源</div><div class="deep-section-body">${items}</div></div>`;
+    }
+    if (dp.relatedInsights && dp.relatedInsights.length) {
+      const ids = dp.relatedInsights.map(id => `<span class="deep-related-id">${id}</span>`).join('');
+      sections += `<div class="deep-section s-related"><div class="deep-section-title">🔗 关联 Insight</div><div class="deep-section-body">${ids}</div></div>`;
+    }
+    let tags = '';
+    if (dp.tags && dp.tags.length) {
+      tags = `<div class="deep-tags">${dp.tags.map(t => `<span class="deep-tag">${t}</span>`).join('')}</div>`;
+    }
+    return sections + tags;
   }
-  if (dp.relatedInsights && dp.relatedInsights.length) {
-    const ids = dp.relatedInsights.map(id => `<span class="deep-related-id">${id}</span>`).join('');
-    sections += `<div class="deep-section s-related"><div class="deep-section-title">🔗 关联 Insight</div><div class="deep-section-body">${ids}</div></div>`;
-  }
-  let tags = '';
-  if (dp.tags && dp.tags.length) {
-    tags = `<div class="deep-tags">${dp.tags.map(t => `<span class="deep-tag">${t}</span>`).join('')}</div>`;
-  }
-  return `<div class="card-deep" id="detail-${d.id}"><div class="card-deep-inner">${sections}${tags}</div></div>`;
+  // Legacy fallback
+  let html = '';
+  if (d.insight) html += `<div class="deep-section s-analysis"><div class="deep-section-title">核心观点</div><div class="deep-section-body">${d.insight}</div></div>`;
+  if (d.routeImpact) html += `<div class="deep-section s-impact"><div class="deep-section-title">路线影响</div><div class="deep-section-body">${d.routeImpact}</div></div>`;
+  return html;
 }
+
+// ── Drawer ──
+function openDrawer(d) {
+  const gk = gradeKey(d.grade);
+  const gradeLabel = gk==='red'?'🔴 路线级':gk==='yellow'?'🟡 值得了解':'🔵 参考';
+  document.getElementById('drawerTitle').textContent = d.title;
+  let metaHTML = `<div class="grade-badge ${gk}">${gradeLabel}</div>`;
+  if (d.source) {
+    if (d.sourceUrl) {
+      metaHTML += `<span class="drawer-header-source">来源：<a href="${d.sourceUrl}" target="_blank" rel="noopener">${d.source}</a></span>`;
+    } else {
+      metaHTML += `<span class="drawer-header-source">来源：${d.source}</span>`;
+    }
+  }
+  document.getElementById('drawerMeta').innerHTML = metaHTML;
+  document.getElementById('drawerBody').innerHTML = drawerContentHTML(d);
+  document.getElementById('drawerPanel').classList.add('open');
+  document.getElementById('drawerBackdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  document.getElementById('drawerPanel').classList.remove('open');
+  document.getElementById('drawerBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('drawerBackdrop').addEventListener('click', closeDrawer);
+document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
 function bindEvents(wrap) {
   wrap.querySelectorAll('[data-act]').forEach(btn => {
@@ -881,25 +987,8 @@ function bindEvents(wrap) {
   });
   wrap.querySelectorAll('[data-expand]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const id = btn.dataset.expand;
-      const detail = document.getElementById('detail-'+id);
-      const arrow = btn.querySelector('.expand-arrow');
-      const isDeep = detail.classList.contains('card-deep');
-      if (isDeep) {
-        const opening = !detail.classList.contains('open');
-        if (opening) {
-          detail.style.maxHeight = detail.scrollHeight + 'px';
-          detail.classList.add('open');
-        } else {
-          detail.style.maxHeight = detail.scrollHeight + 'px';
-          requestAnimationFrame(() => { detail.style.maxHeight = '0'; });
-          detail.classList.remove('open');
-        }
-      } else {
-        detail.classList.toggle('open');
-      }
-      arrow.classList.toggle('open');
-      btn.querySelector('.expand-label').textContent = detail.classList.contains('open') ? '收起' : '深度分析';
+      const d = DATA.find(item => item.id === btn.dataset.expand);
+      if (d) openDrawer(d);
     });
   });
 }
@@ -911,7 +1000,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-03-23 13:52';
+  document.getElementById('metaText').textContent = '最后同步：2026-03-23 14:08';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
