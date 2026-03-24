@@ -796,6 +796,10 @@ const DATA = [
   {"date":"2026-03-24","time":"18:30","grade":"🟡","title":"Seed1.8 Model Card: Towards Generalized Real-World Agency","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.20633","domain":"Agent Model","summary":"字节跳动 Bytedance Seed 发布 Seed1.8，定位「通用现实世界 Agency」——多轮交互 + tool use + 多步执行，字节自研 Agent 模型能力参考","status":"pushed","routeImpact":"字节目标公司，了解其 Agent 模型设计取向有助于面试对话","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260324_1830_003","shortId":"P186"},
   {"date":"2026-03-24","time":"18:30","grade":"🟡","title":"Utility-Guided Agent Orchestration for Efficient LLM Tool Use","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.19896","domain":"Agent Orchestration","summary":"解决 Agent tool use 中质量 vs 成本的核心矛盾，提出效用引导编排框架，优于 ReAct 固定流程","status":"pushed","routeImpact":"Tool use 效率框架，训练营 Agent 工程实战的可迁移设计模式","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260324_1830_004","shortId":"P187"},
   {"date":"2026-03-24","time":"18:30","grade":"🟡","title":"Enhancing Legal LLMs through Metadata-Enriched RAG Pipelines and Direct Preference Optimization","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.19251","domain":"RAG Pipeline","summary":"Metadata 增强 RAG + DPO 拒绝优化，解决长法律文档幻觉问题——metadata hybrid retrieval 方法通用可迁移","status":"pushed","routeImpact":"RAG Pipeline 优化技术，metadata hybrid retrieval 是 Agentic RAG 实战常用模式","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260324_1830_005","shortId":"P188"},
+  {"date":"2026-03-24","time":"21:00","grade":"🟡","title":"LiteLLM 1.82.8 供应链攻击 — 恶意 .pth 自动执行凭证窃取","source":"HN/47501729","sourceUrl":"https://github.com/BerriAI/litellm/issues/24512","domain":"Agent Security","summary":"litellm==1.82.8（当前最新版）含恶意 .pth 文件，Python 启动时自动执行凭证窃取，无需 import。供应链攻击，Agent 工程依赖必须审查","status":"pushed","routeImpact":"Agent 项目依赖链审查：用 litellm 的项目（LangGraph/CrewAI）要立即锁版本或降级至 1.82.7","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260324_2100_000","shortId":"P189"},
+  {"date":"2026-03-24","time":"21:00","grade":"🔵","title":"Grok CLI v1 发布（MIT 开源，多代理+Telegram 控制）","source":"@pelaseyed","sourceUrl":"https://x.com/pelaseyed/status/2036419740747333980","domain":"Agent Tooling","summary":"Grok CLI v1 编码代理工具，支持多代理协作和 Telegram 远程控制，MIT 开源 npm 安装","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260324_2100_001","shortId":"P190"},
+  {"date":"2026-03-24","time":"21:00","grade":"🔵","title":"Claude Auto-dream 未发布内存功能（子代理定期整合 MEMORY.md）","source":"@rohanpaul_ai","sourceUrl":"https://x.com/rohanpaul_ai/status/2036421602049663300","domain":"Agent Memory","summary":"Claude Code 中出现未发布 Auto-dream 功能，子代理定期审视会话、更新 MEMORY.md","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260324_2100_002","shortId":"P191"},
+  {"date":"2026-03-24","time":"21:00","grade":"🔵","title":"daVinci-MagiHuman 音频-视频生成基础模型开源","source":"@_akhaliq","sourceUrl":"https://x.com/_akhaliq/status/2036420009535078737","domain":"Multimodal","summary":"单流架构快速音频-视频生成，论文+模型已在 HuggingFace 开源","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260324_2100_003","shortId":"P192"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1039,7 +1043,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-03-24 18:31';
+  document.getElementById('metaText').textContent = '最后同步：2026-03-24 21:06';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
