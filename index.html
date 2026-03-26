@@ -843,6 +843,9 @@ const DATA = [
   {"date":"2026-03-25","time":"18:30","grade":"🔵","title":"Think Before You Drive: World Model-Inspired Multimodal Grounding for Autonomous Vehicles","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2512.03454","domain":"AV","summary":"自动驾驶多代理，特定垂直场景","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260325_1830_014","shortId":"P233"},
   {"date":"2026-03-26","time":"09:00","grade":"🔵","title":"LiteParse 文档解析器发布","source":"@jerryjliu0","sourceUrl":"https://x.com/jerryjliu0/status/2036960731871277353","domain":"tools","summary":"开源无模型文档解析器，集成40+编码代理","status":"skipped","routeImpact":"","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260326_0900_000","shortId":"P234"},
   {"date":"2026-03-26","time":"09:00","grade":"🔵","title":"Claude Code iMessage 插件","source":"@trq212","sourceUrl":"https://x.com/trq212/status/2036959638646866021","domain":"openclaw","summary":"Claude Code iMessage 通道插件发布","status":"skipped","routeImpact":"","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260326_0900_001","shortId":"P235"},
+  {"date":"2026-03-26","time":"09:30","grade":"🟡","title":"Reasoner-Executor-Synthesizer: Scalable Agentic Architecture with Static O(1) Context Window","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.22367","domain":"context window","summary":"O(1) 上下文窗口的 Agent 架构，解决长上下文 RAG 幻觉和信息丢失问题","status":"pushed","routeImpact":"Context Engineering 实用方案","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260326_0930_000","shortId":"P236"},
+  {"date":"2026-03-26","time":"09:30","grade":"🟡","title":"Mind Your HEARTBEAT! Claw Background Execution Inherently Enables Silent Memory Pollution","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.23064","domain":"agent memory","summary":"OpenClaw 心跳后台执行存在内存污染漏洞，未经信任的内容可影响用户交互行为","status":"pushed","routeImpact":"Agent Memory 安全考量","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260326_0930_001","shortId":"P237"},
+  {"date":"2026-03-26","time":"09:30","grade":"🟡","title":"Agent Audit: A Security Analysis System for LLM Agent Applications","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.22853","domain":"MCP","summary":"LLM Agent 安全分析系统，检查模型、工具代码、部署配置的组合安全","status":"pushed","routeImpact":"Agent 安全工程","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260326_0930_002","shortId":"P238"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1086,7 +1089,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-03-26 09:04';
+  document.getElementById('metaText').textContent = '最后同步：2026-03-26 09:34';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
