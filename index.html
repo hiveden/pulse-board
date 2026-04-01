@@ -1071,6 +1071,10 @@ const DATA = [
   {"date":"2026-04-01","time":"18:15","grade":"🔵","title":"Anthropic Claude Code源码泄露延伸（rohanpaul搬运）","source":"@rohanpaul_ai","sourceUrl":"https://x.com/rohanpaul_ai/status/2039282235980034063","domain":"tools","summary":"rohanpaul_ai对Claude Code泄露事件的二次搬运，已多次覆盖，跳过","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_1815_001","shortId":"P461"},
   {"date":"2026-04-01","time":"18:15","grade":"🔵","title":"AI生成FreeBSD内核RCE漏洞（CVE-2026-4747）","source":"HN 47597119","sourceUrl":"https://github.com/califio/publications/blob/main/MADBugs/CVE-2026-4747/write-up.md","domain":"ai-safety","summary":"Claude辅助编写了完整FreeBSD远程内核RCE利用代码，AI代码生成与漏洞利用能力边界问题，26pt极低热度但信号值得I012关注","status":"skipped","routeImpact":"","insight":"I012","pushCount":1,"alexStatus":"unread","id":"ps_20260401_1815_002","shortId":"P462"},
   {"date":"2026-04-01","time":"18:15","grade":"🔵","title":"smol.ai 26-03-31 期刊：claude-code-leak（已知事件）","source":"smol.ai","sourceUrl":"https://news.smol.ai/issues/26-03-31-claude-code-leak","domain":"tools","summary":"smol.ai 3月31日期刊聚焦Claude Code泄露，工程层面无新路线级信号","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_1815_003","shortId":"P463"},
+  {"date":"2026-04-01","time":"21:15","grade":"🔵","title":"CodePilot宠物系统上线","source":"@op7418","sourceUrl":"https://x.com/op7418/status/2039291138771931454","domain":"工具产品","summary":"CodePilot推出宠物成长系统，引导用户构建Agent工作流，工具产品更新","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_2115_000","shortId":"P464"},
+  {"date":"2026-04-01","time":"21:15","grade":"🔵","title":"HF预训练数据意外公开","source":"@victormustar","sourceUrl":"https://x.com/victormustar/status/2039329952328216641","domain":"数据安全","summary":"Hugging Face实习生误设权限导致预训练数据集公开，包括网页/PDF/合成数据","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_2115_001","shortId":"P465"},
+  {"date":"2026-04-01","time":"21:15","grade":"🔵","title":"Codex集成Claude多模型代理层","source":"@ilovek8s","sourceUrl":"https://x.com/ilovek8s/status/2039248090277003655","domain":"工具集成","summary":"codex-proxy.js透明代理层，同时支持OpenAI Codex和Anthropic Claude系列模型","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_2115_002","shortId":"P466"},
+  {"date":"2026-04-01","time":"21:15","grade":"🔵","title":"HN: I Quit. The Clankers Won","source":"HN","sourceUrl":"https://news.ycombinator.com/item?id=47598511","domain":"行业情绪","summary":"前端开发者讨论AI时代是否应继续写博客/coding，主张坚持原创写作","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_2115_003","shortId":"P467"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1314,7 +1318,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-01 18:18';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-01 21:21';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
