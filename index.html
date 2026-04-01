@@ -1046,6 +1046,11 @@ const DATA = [
   {"date":"2026-03-31","time":"21:15","grade":"🟡","title":"Axios供应链攻击[第4次] — 六源验证，1146pt，中文社区3%执行率确认","source":"@AYi_AInotes+HN","sourceUrl":"https://x.com/AYi_AInotes/status/2038948251177807888","domain":"AI Security","summary":"Axios供应链攻击六源交叉验证：@simonw+@karpathy+@swyx+@_justineo+@AYi_AInotes+HN 1146pt，3%环境已执行恶意代码","status":"pushed","routeImpact":"AI安全赛道实证：Agent项目依赖链供应链攻击序列（litellm→axios），面试必备","insight":"I012","pushCount":1,"alexStatus":"unread","id":"ps_20260331_2115_001","shortId":"P436"},
   {"date":"2026-03-31","time":"21:15","grade":"🔵","title":"Claude Code源码泄露 — 51.2万行TS，NPM source map未关闭","source":"@li9292+HN","sourceUrl":"https://x.com/li9292/status/2038947190157328879","domain":"Tooling","summary":"Claude Code源码泄露，含CLI入口/终端UI/工具系统/隐藏功能（Buddy System/Auto-Dream），HN 561pt","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260331_2115_002","shortId":"P437"},
   {"date":"2026-03-31","time":"21:15","grade":"🔵","title":"Google 200M时序基础模型 16k上下文 — HN 178pt","source":"HN","sourceUrl":"https://news.ycombinator.com/item?id=47583045","domain":"Models","summary":"Google开源200M参数时序预测基础模型，16k上下文，非Agent工程路线","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260331_2115_003","shortId":"P438"},
+  {"date":"2026-04-01","time":"09:15","grade":"🔵","title":"Google AI Studio QoL更新（STT/移动UI/chat保存）","source":"@OfficialLoganK","sourceUrl":"https://x.com/OfficialLoganK/status/2039137446932185266","domain":"工具更新","summary":"AI Studio多项体验更新，不改变学习路线","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_0915_000","shortId":"P439"},
+  {"date":"2026-04-01","time":"09:15","grade":"🔵","title":"SentrySearch：自然语言搜索视频内容（Gemini Embedding+ChromaDB）","source":"@dotey","sourceUrl":"https://x.com/dotey/status/2039147493355634989","domain":"工具发布","summary":"视频语义搜索CLI工具，应用演示非路线信号","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_0915_001","shortId":"P440"},
+  {"date":"2026-04-01","time":"09:15","grade":"🔵","title":"Block公司用AI协调取代管理层级","source":"@rohanpaul_ai","sourceUrl":"https://x.com/rohanpaul_ai/status/2039145783799566783","domain":"企业战略","summary":"C级搬运，企业组织观点，不改变学什么","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_0915_002","shortId":"P441"},
+  {"date":"2026-04-01","time":"09:15","grade":"🔵","title":"OpenAI完成融资轮，估值$852B","source":"HN 47592755","sourceUrl":"https://news.ycombinator.com/item?id=47592755","domain":"商业","summary":"融资新闻，313pt，非技术路线信号","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_0915_003","shortId":"P442"},
+  {"date":"2026-04-01","time":"09:15","grade":"🔵","title":"Slop is not necessarily the future（HN讨论）","source":"HN 47587953","sourceUrl":"https://news.ycombinator.com/item?id=47587953","domain":"观点","summary":"AI内容质量讨论，172pt，观点级跳过","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260401_0915_004","shortId":"P443"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1289,7 +1294,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-03-31 21:20';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-01 09:19';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
