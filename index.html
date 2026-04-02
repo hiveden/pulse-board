@@ -1096,6 +1096,11 @@ const DATA = [
   {"date":"2026-04-02","time":"19:45","grade":"🔵","title":"Grok CLI支持桌面应用交互","source":"@pelaseyed","sourceUrl":"https://x.com/pelaseyed/status/2039601223976796607","domain":"工具","summary":"Grok CLI新增桌面应用交互+Telegram连接，工具版本更新，不改变路线","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_1945_003","shortId":"P486"},
   {"date":"2026-04-02","time":"19:45","grade":"🔵","title":"企业推广AI Agent真实经验","source":"@plantegg","sourceUrl":"https://x.com/plantegg/status/2039654071431311608","domain":"AI应用","summary":"前3月无人问津→CTO推动→爬坡，企业推广AI Agent实战，观点/经验级","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_1945_004","shortId":"P487"},
   {"date":"2026-04-02","time":"19:45","grade":"🔵","title":"bb-browser v0.11.0 CDP直连重构","source":"@xicilion","sourceUrl":"https://x.com/xicilion/status/2039670372539457838","domain":"工具","summary":"抛弃Chrome Extension改用CDP WebSocket，支持Agent并发，工具版本更新","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_1945_005","shortId":"P488"},
+  {"date":"2026-04-02","time":"19:49","grade":"🟡","title":"Reasoning Shift: How Context Silently Shortens LLM Reasoning","source":"HF Daily","sourceUrl":"https://arxiv.org/abs/2604.00XXX","domain":"Context Management","summary":"LLM推理链在长上下文影响下悄然缩短，HF 19 upvotes，T2 Context Engineering直接证据","status":"pushed","routeImpact":"上下文管理如何影响reasoning quality，T2核心问题","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_1949_000","shortId":"P489"},
+  {"date":"2026-04-02","time":"19:49","grade":"🟡","title":"Doctor-RAG: Failure-Aware Repair for Agentic Retrieval-Augmented Generation","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2604.00865","domain":"Agentic RAG","summary":"Agentic RAG多跳推理中的失败感知修复机制，推理轨迹增长时自动检测+修复","status":"pushed","routeImpact":"Agentic RAG可靠性工程，T2方向实战参考","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_1949_001","shortId":"P490"},
+  {"date":"2026-04-02","time":"19:49","grade":"🔵","title":"Investigating Autonomous Agent Contributions in the Wild","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2604.00917","domain":"Coding Agent","summary":"真实项目中coding agent贡献统计研究，方法无迁移价值","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_1949_002","shortId":"P491"},
+  {"date":"2026-04-02","time":"19:49","grade":"🔵","title":"Executing as You Generate: Hiding Execution Latency","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2604.00491","domain":"Coding Agent","summary":"并行执行优化工程技巧，不改变路线","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_1949_003","shortId":"P492"},
+  {"date":"2026-04-02","time":"19:49","grade":"🔵","title":"CivicShield: Defense for Government-Facing AI Chatbots","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.29062","domain":"AI Safety","summary":"政府chatbot多层防御，垂直场景方法不通用","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_1949_004","shortId":"P493"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1339,7 +1344,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-02 19:48';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-02 19:51';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
