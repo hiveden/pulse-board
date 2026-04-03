@@ -1107,6 +1107,10 @@ const DATA = [
   {"date":"2026-04-02","time":"21:15","grade":"🔵","title":"Vibe Island — 灵动岛式Claude Code状态监控","source":"@onevcat","sourceUrl":"https://x.com/onevcat/status/2039633778717638869","domain":"AI工具","summary":"Vibe Island Mac App，多终端监控Claude Code状态，OSC 9/777兼容","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_2115_003","shortId":"P497"},
   {"date":"2026-04-02","time":"21:15","grade":"🔵","title":"Claude Code优化NASA Artemis II登月轨迹","source":"@om_patel5","sourceUrl":"https://x.com/om_patel5/status/2039522385007898703","domain":"AI应用","summary":"NASA用Claude Code模拟14000种中止场景，5天完成原4-6月工作","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_2115_004","shortId":"P498"},
   {"date":"2026-04-02","time":"21:15","grade":"🔵","title":"AMD Lemonade — 开源本地LLM服务器","source":"HN 47612724","sourceUrl":"https://news.ycombinator.com/item?id=47612724","domain":"AI基础设施","summary":"AMD开源快速本地LLM服务器，GPU+CPU混合推理，73pt","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260402_2115_005","shortId":"P499"},
+  {"date":"2026-04-03","time":"09:15","grade":"🟡","title":"Qwen3.6-Plus preserve_thinking：Context Engineering 被产品化","source":"HN/qwen.ai","sourceUrl":"https://qwen.ai/blog?id=qwen3.6","domain":"context-engineering","summary":"阿里 Qwen3.6-Plus 新增 preserve_thinking API 参数，将跨步骤推理上下文保留作为一等能力输出，1M token context，Terminal-Bench 2.0 超 Claude 4.5 Opus（61.6 vs 59.3）","status":"pushed","routeImpact":"T2 Context Engineering 方向：preserve_thinking 是 Context Management 从研究走向产品化的信号，JD 可能出现该能力的评估要求","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_0915_000","shortId":"P500"},
+  {"date":"2026-04-03","time":"09:15","grade":"🔵","title":"Google Gemma 4 开源，Apache 2.0 本地部署","source":"HN 47616361","sourceUrl":"https://news.ycombinator.com/item?id=47616361","domain":"model-release","summary":"Google Gemma 4 开源发布 1117pt，Apache 2.0，支持高推理+多模态，Mac M3/M4 本地可跑，但不改变 Agent 框架路线","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_0915_001","shortId":"P501"},
+  {"date":"2026-04-03","time":"09:15","grade":"🔵","title":"Cursor 3 发布","source":"HN 47618084","sourceUrl":"https://news.ycombinator.com/item?id=47618084","domain":"tools","summary":"Cursor 3 发布 275pt，工具版本更新，不改变路线","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_0915_002","shortId":"P502"},
+  {"date":"2026-04-03","time":"09:15","grade":"🔵","title":"OpenAI 收购 TBPN 媒体网络","source":"HN 47617376","sourceUrl":"https://news.ycombinator.com/item?id=47617376","domain":"business","summary":"OpenAI 收购 TBPN 强化营销，142pt，商业动态非技术路线","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_0915_003","shortId":"P503"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1350,7 +1354,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-02 21:18';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-03 09:18';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
