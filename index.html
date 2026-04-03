@@ -1115,6 +1115,10 @@ const DATA = [
   {"date":"2026-04-03","time":"09:50","grade":"🟡","title":"Beyond Elicitation: Provision-based Prompt Optimization","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2511.10465","domain":"context-engineering","summary":"新prompt优化范式：从激活模型已有能力(elicitation)转向主动提供外部知识(provision)，知识密集型任务效果更好","status":"pushed","routeImpact":"T2 Context Engineering：prompt优化新方向","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_0950_001","shortId":"P505"},
   {"date":"2026-04-03","time":"09:50","grade":"🟡","title":"SRAG: Structured Data Improves Vector Retrieval","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.26670","domain":"agentic-rag","summary":"结构化数据（KG三元组）+向量检索混合RAG，提升知识密集型问答准确率","status":"pushed","routeImpact":"T2 Agentic RAG方向：混合检索方法","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_0950_002","shortId":"P506"},
   {"date":"2026-04-03","time":"09:50","grade":"🟡","title":"Emergent Social Intelligence Risks in Generative Multi-Agent Systems","source":"arXiv","sourceUrl":"https://arxiv.org/abs/2603.27771","domain":"ai-safety","summary":"多Agent系统从原型走向实际部署时涌现的社会智能风险（联合规划/资源分配/协商），I012证据","status":"pushed","routeImpact":"AI安全赛道I012：多Agent社会风险系统性证据","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_0950_003","shortId":"P507"},
+  {"date":"2026-04-03","time":"21:15","grade":"🔵","title":"x-news-push 采集超时（无新入库）","source":"tweets.db","sourceUrl":"https://x.com/internal/tweets-db-2026-04-03-2115","domain":"系统状态","summary":"本轮x-news-push脚本超时退出，tweets.db无新增推文（最新pushed_at仍为2026-04-03 01:17 UTC）","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_2115_000","shortId":"P508"},
+  {"date":"2026-04-03","time":"21:15","grade":"🔵","title":"HN: Apfel – Free AI on Mac (284pt)","source":"HN","sourceUrl":"https://news.ycombinator.com/item?id=47624645","domain":"工具","summary":"macOS本地AI工具，不改变学什么","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_2115_001","shortId":"P509"},
+  {"date":"2026-04-03","time":"21:15","grade":"🔵","title":"HN: Qwen3.6-Plus 558pt (持续热度)","source":"HN","sourceUrl":"https://news.ycombinator.com/item?id=47615002","domain":"模型","summary":"Qwen3.6-Plus 1M context coding agent模型，09:15已推preserve_thinking信号，模型发布本身跳过","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_2115_002","shortId":"P510"},
+  {"date":"2026-04-03","time":"21:15","grade":"🔵","title":"smol.ai 04-02: Gemma 4发布专题","source":"smol.ai","sourceUrl":"https://news.smol.ai/issues/26-04-02-gemma-4","domain":"模型","summary":"Gemma 4开源模型发布（Apache 2.0，31B/26B MoE），模型发布不改变工程路线","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260403_2115_003","shortId":"P511"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1358,7 +1362,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-03 09:50';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-03 21:20';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
