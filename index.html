@@ -1124,6 +1124,8 @@ const DATA = [
   {"date":"2026-04-04","time":"09:50","grade":"🟡","title":"AISAC: An Integrated multi-agent System for Transparent, Retrieval-Grounded Scientific Assistance","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2511.14043","domain":"Multi-Agent, RAG","summary":"一个用于科学研究的多代理系统，其架构明确包含上下文管理和基于检索的溯源，对构建 Agentic RAG 系统有直接参考价值。","status":"pushed","routeImpact":"提供了 Agentic RAG 和多代理系统的一个具体架构参考。","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260404_0950_002","shortId":"P514"},
   {"date":"2026-04-04","time":"09:50","grade":"🟡","title":"GUIDE: Resolving Domain Bias in GUI Agents through Real-Time Web Video Retrieval and Plug-and-Play Annotation","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2603.26266","domain":"RAG, Multi-Agent","summary":"通过实时视频检索和即插即用标注的 RAG 管道来解决 GUI Agent 的领域偏差，其方法对优化任何 RAG 系统都有通用价值。","status":"pushed","routeImpact":"为优化 RAG pipeline 提供了一种新的思路和技术实现参考。","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260404_0950_003","shortId":"P515"},
   {"date":"2026-04-04","time":"09:50","grade":"🔵","title":"CREST: Universal Safety Guardrails Through Cluster-Guided Cross-Lingual Transfer","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2512.02711","domain":"AI Safety","summary":"通过聚类引导的跨语言迁移来构建通用安全护栏，但方法偏向语言学而非系统工程，跳过。","status":"skipped","routeImpact":"","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260404_0950_004","shortId":"P516"},
+  {"date":"2026-04-04","time":"15:15","grade":"🔴","title":"Anthropic Restricts OpenClaw Access for Claude Subscriptions","source":"HN","sourceUrl":"https://news.ycombinator.com/item?id=47633396","domain":"AI Ecosystem","summary":"Anthropic is ending the ability for Claude subscribers to use their subscription limits with third-party harnesses like OpenClaw, citing the outsized strain on their systems.","status":"pushed","routeImpact":"Impacts AI agent ecosystem and architecture choices for developers.","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260404_1515_000","shortId":"P517"},
+  {"date":"2026-04-04","time":"15:15","grade":"🔴","title":"OpenClaw Privilege Escalation Vulnerability","source":"HN","sourceUrl":"https://news.ycombinator.com/item?id=47628608","domain":"AI Safety & Security","summary":"A critical privilege escalation vulnerability (CVE-2026-33579) has been disclosed in OpenClaw.","status":"pushed","routeImpact":"Highlights the growing importance of security in the AI engineering lifecycle.","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260404_1515_001","shortId":"P518"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1367,7 +1369,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-04 09:52';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-04 15:17';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
