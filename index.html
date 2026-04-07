@@ -1140,6 +1140,10 @@ const DATA = [
   {"date":"2026-04-06","time":"18:19","grade":"🔵","title":"Gemma 4 on iPhone","source":"HN","sourceUrl":"https://apps.apple.com/nl/app/google-ai-edge-gallery/id6749645337","domain":"Model Deployment","summary":"讨论在 iPhone 上运行 Gemma 4 模型。","status":"skipped","routeImpact":"","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260406_1819_005","shortId":"P530"},
   {"date":"2026-04-06","time":"18:19","grade":"🔵","title":"Microsoft hasn't had a coherent GUI strategy since Petzold","source":"HN","sourceUrl":"https://www.jsnover.com/blog/2026/03/13/microsoft-hasnt-had-a-coherent-gui-strategy-since-petzold/","domain":"Industry Commentary","summary":"关于微软GUI策略的讨论。","status":"skipped","routeImpact":"","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260406_1819_006","shortId":"P531"},
   {"date":"2026-04-06","time":"18:19","grade":"🔵","title":"An open-source 240-antenna array to bounce signals off the Moon","source":"HN","sourceUrl":"https://moonrf.com/","domain":"Hardware","summary":"一个用于将信号反射到月球的开源天线阵列项目。","status":"skipped","routeImpact":"","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260406_1819_007","shortId":"P532"},
+  {"date":"2026-04-07","time":"23:44","grade":"🔴","title":"Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2603.28986","domain":"Agent Architecture","summary":"提出Mimosa框架，旨在解决当前自主科研（ASR）系统中工作流和工具集固定的问题，使多智能体系统能够适应不断变化的任务和环境。","status":"pushed","routeImpact":"直接关系到Agent架构演进和MCP方向。","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260407_2344_000","shortId":"P533"},
+  {"date":"2026-04-07","time":"23:44","grade":"🟡","title":"Drop the Hierarchy and Roles: How Self-Organizing LLM Agents Outperform Designed Structures","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2603.28990","domain":"Agent Architecture","summary":"通过大规模实验挑战了传统的多智能体层级结构设计，发现自组织（self-organizing）的LLM Agent在性能上优于固定角色的层级结构。","status":"pushed","routeImpact":"为Agent系统架构选型提供参考。","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260407_2344_001","shortId":"P534"},
+  {"date":"2026-04-07","time":"23:44","grade":"🟡","title":"Adversarial Attacks on Multimodal Large Language Models: A Comprehensive Survey","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2603.27918","domain":"AI Safety","summary":"一篇关于多模态大模型（MLLM）对抗攻击的综述，系统性地整理了攻击、防御和评估方法。","status":"pushed","routeImpact":"为AI安全赛道（特别是jailbreak方向）提供全面的知识图谱。","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260407_2344_002","shortId":"P535"},
+  {"date":"2026-04-07","time":"23:44","grade":"🟡","title":"Bridge-RAG: An Abstract Bridge Tree Based Retrieval Augmented Generation Algorithm With Cuckoo Filter","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2603.26668","domain":"RAG","summary":"针对RAG在检索准确性和计算效率上的挑战，提出了一种新的名为Bridge-RAG的框架。","status":"pushed","routeImpact":"为RAG管道优化方向提供新方法。","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260407_2344_003","shortId":"P536"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1383,7 +1387,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-06 18:21';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-07 23:46';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
