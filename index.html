@@ -1145,6 +1145,7 @@ const DATA = [
   {"date":"2026-04-07","time":"23:44","grade":"🟡","title":"Adversarial Attacks on Multimodal Large Language Models: A Comprehensive Survey","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2603.27918","domain":"AI Safety","summary":"一篇关于多模态大模型（MLLM）对抗攻击的综述，系统性地整理了攻击、防御和评估方法。","status":"pushed","routeImpact":"为AI安全赛道（特别是jailbreak方向）提供全面的知识图谱。","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260407_2344_002","shortId":"P535"},
   {"date":"2026-04-07","time":"23:44","grade":"🟡","title":"Bridge-RAG: An Abstract Bridge Tree Based Retrieval Augmented Generation Algorithm With Cuckoo Filter","source":"arxiv","sourceUrl":"https://arxiv.org/abs/2603.26668","domain":"RAG","summary":"针对RAG在检索准确性和计算效率上的挑战，提出了一种新的名为Bridge-RAG的框架。","status":"pushed","routeImpact":"为RAG管道优化方向提供新方法。","pushCount":1,"alexStatus":"unread","insight":"","id":"ps_20260407_2344_003","shortId":"P536"},
   {"date":"2026-04-08","time":"15:17","grade":"🔴","title":"Anthropic announces Project Glasswing, a major AI safety initiative","source":"Hacker News","sourceUrl":"https://www.anthropic.com/glasswing","domain":"AI Safety","summary":"Anthropic has launched Project Glasswing, a significant effort to enhance the security of critical software in the age of AI, focusing on formal methods and automated reasoning. This strongly validates a focus on AI safety.","status":"pushed","routeImpact":"Validates and provides a concrete focus area for the AI safety learning path.","insight":"I017","pushCount":1,"alexStatus":"unread","id":"ps_20260408_1517_000","shortId":"P537"},
+  {"date":"2026-04-09","time":"08:21","grade":"🔴","title":"Anthropic 公测 Managed Agents，提供生产级托管服务","source":"@zstmfhy","sourceUrl":"https://x.com/zstmfhy/status/2042032031148994730","domain":"Agent Infrastructure","summary":"Anthropic推出生产级代理托管服务，包括沙盒、重试、监控和安全功能，旨在将开发者的精力从DevOps中解放出来，更专注于代理任务定义。","status":"pushed","routeImpact":"官方Agent托管方案可能取代自建框架部分需求，使开发重点向任务定义和方法论转移，直接影响T1/T2路线。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260409_0821_000","shortId":"P538"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1388,7 +1389,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-08 15:23';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-09 08:21';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
