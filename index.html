@@ -1159,6 +1159,11 @@ const DATA = [
   {"date":"2026-04-09","time":"21:15","grade":"🔵","title":"《救猫咪》编剧技巧对产品设计的启发","source":"@bearliu","sourceUrl":"https://x.com/bearliu/status/2042228553052283135","domain":"Product Design","summary":"通过阅读好莱坞编剧指南，总结出可应用于产品设计和故事创作的普适性叙事原则。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260409_2115_004","shortId":"P549"},
   {"date":"2026-04-09","time":"21:15","grade":"🔵","title":"Neovim Mason工具管理扩展","source":"@_dotfiles","sourceUrl":"https://x.com/_dotfiles/status/2042038494629884401","domain":"DevEnv","summary":"mason-tool-installer插件可以统一管理LSP服务器和其他开发工具，简化Neovim环境配置。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260409_2115_005","shortId":"P550"},
   {"date":"2026-04-09","time":"21:15","grade":"🔵","title":"《币安人生》书评","source":"@Jason23818126","sourceUrl":"https://x.com/Jason23818126/status/2042217933389398137","domain":"Crypto","summary":"书评分享了币安创始人CZ和何一的创业故事，揭示了技术与市场的互补在加密行业成功的重要性。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260409_2115_006","shortId":"P551"},
+  {"date":"2026-04-11","time":"12:15","grade":"🔴","title":"Anthropic公测Managed Agents，引入Vaults安全架构","source":"@dotey","sourceUrl":"https://x.com/dotey/status/2042805474681118988","domain":"AI安全/Agent工程","summary":"Anthropic推出Claude Managed Agents，使用Vaults安全管理用户凭证，避免密钥进入上下文，从根本上防止提示注入泄露。这是生产级Agent安全架构的新模式。","status":"pushed","routeImpact":"对T2 Context Engineering和AI安全学习路线有直接指导意义，是需深入研究的新架构。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260411_1215_000","shortId":"P552"},
+  {"date":"2026-04-11","time":"12:15","grade":"🔴","title":"OpenAI报告第三方库Axios安全漏洞事件","source":"@dotey","sourceUrl":"https://x.com/dotey/status/2042788780243911135","domain":"AI安全","summary":"OpenAI报告其产品使用的Axios库存在漏洞，凸显AI应用供应链安全的重要性。虽无数据泄露证据，但已轮换证书并要求用户更新。","status":"pushed","routeImpact":"典型的AI供应链安全案例（AppSec for AI），是理解和学习AI应用全栈安全的绝佳素材。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260411_1215_001","shortId":"P553"},
+  {"date":"2026-04-11","time":"12:15","grade":"🟡","title":"Claude Code推出/ultraplan功能，向非专业用户泛化","source":"@turingou","sourceUrl":"https://x.com/turingou/status/2042758686108717371","domain":"Agent产品","summary":"Claude Code新增/ultraplan功能，可为用户需求构建可编辑的实施计划再执行，标志着其从专业开发工具向更广泛的问题解决应用演进。","status":"pushed","routeImpact":"反映头部Coding Agent的产品战略演进方向，对理解Agent产品形态的未来有参考价值。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260411_1215_002","shortId":"P554"},
+  {"date":"2026-04-11","time":"12:15","grade":"🟡","title":"Paseo：统一运行多种Coding Agent的开源工具","source":"@fankaishuoai","sourceUrl":"https://x.com/fankaishuoai/status/2042801470840700971","domain":"Agent生态","summary":"Paseo工具支持统一运行Claude Code、Codex等多种Coding Agent，并支持手机/iPad远程加密访问，解决Agent单机运行痛点。","status":"pushed","routeImpact":"“Agent of Agents”或Agent运行环境的出现，是生态发展到一定阶段的产物，值得关注。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260411_1215_003","shortId":"P555"},
+  {"date":"2026-04-11","time":"12:15","grade":"🟡","title":"OpenAI官方分享的CLI工具优化心得","source":"@dotey","sourceUrl":"https://x.com/dotey/status/2042777337398210713","domain":"Context Engineering","summary":"OpenAI Codex团队分享通过构建自定义CLI（如codex-threads, slack-cli）预处理信息，以精准上下文提升AI效率，而非直接喂养杂乱数据。","status":"pushed","routeImpact":"来自OpenAI官方的Context Engineering实践，印证了“人机协同，工具先行”的理念，与T2学习方向高度契合。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260411_1215_004","shortId":"P556"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1402,7 +1407,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-09 21:18';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-11 12:19';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
