@@ -1373,6 +1373,11 @@ const DATA = [
   {"date":"2026-04-18","time":"15:15","grade":"🔵","title":"Claude Design重新设计网站","source":"@wangray","sourceUrl":"https://x.com/wangray/status/2045396230734577738","domain":"AI Application","summary":"使用Claude Design工具重新设计了一个网站。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260418_1515_008","shortId":"P763"},
   {"date":"2026-04-18","time":"15:15","grade":"🔵","title":"Claude Design发布冲击Figma","source":"@om_patel5","sourceUrl":"https://x.com/om_patel5/status/2045368477020557669","domain":"Industry News","summary":"Anthropic发布Claude Design，对设计工具市场产生冲击。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260418_1515_009","shortId":"P764"},
   {"date":"2026-04-18","time":"15:15","grade":"🔵","title":"Opus 4.7模型性能排行","source":"@om_patel5","sourceUrl":"https://x.com/om_patel5/status/2045365238455779458","domain":"Model","summary":"Arena AI发布了对Claude Opus 4.7的性能排名。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260418_1515_010","shortId":"P765"},
+  {"date":"2026-04-19","time":"09:15","grade":"🔴","title":"[第14次推送] Agent 架构核心转向 \"Harness Layer\"","source":"push-history","sourceUrl":"https://github.com/toolmanlab/pulse-board/","domain":"Agent Architecture","summary":"核心架构范式转变，影响 Agent 实现的顶层设计。","status":"pushed","routeImpact":"这是对 Agent 实现思路的根本性调整，意味着你的学习重点应包含 Agent 系统设计，而不仅仅是模型或应用层。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260419_0915_000","shortId":"P766"},
+  {"date":"2026-04-19","time":"09:15","grade":"🔴","title":"[新信号] Claude Opus 系统提示演进分析","source":"@simonw","sourceUrl":"https://x.com/simonw/status/2045655052548022690","domain":"Context Engineering","summary":"Simon Willison 对比了 Opus 4.6 和 4.7 的系统提示，揭示了模型迭代中为提升 Agent 能力所做的具体调整。","status":"pushed","routeImpact":"提供了从模型内部视角理解 Agent 能力提升的直接证据，对优化与模型的交互方式（Context Engineering）有直接指导意义。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260419_0915_001","shortId":"P767"},
+  {"date":"2026-04-19","time":"09:15","grade":"🟡","title":"[新工具] LlamaIndex 引入本地文档解析器 LiteParse","source":"@jerryjliu0","sourceUrl":"https://x.com/jerryjliu0/status/2045664528097247649","domain":"Tooling / RAG","summary":"LiteParse 作为一个支持50多种格式、本地化、快速的开源文档解析器，正式加入 LlamaIndex 生态。","status":"pushed","routeImpact":"强化了 Agentic RAG 流程中“数据摄取”环节的能力，提升了 RAG 管道的鲁棒性和效率。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260419_0915_002","shortId":"P768"},
+  {"date":"2026-04-19","time":"09:15","grade":"🔵","title":"Hermes Agent 发布 Infographic 生成技能","source":"@dotey","sourceUrl":"https://x.com/dotey/status/2045657732250820620","domain":"Agent Application","summary":"用户为 Hermes Agent 开发了从 URL 生成信息图的技能。","status":"skipped","routeImpact":"","insight":"跳过原因：属于具体应用层面的工具更新，不影响核心技术路线或架构选型。","pushCount":1,"alexStatus":"unread","id":"ps_20260419_0915_003","shortId":"P769"},
+  {"date":"2026-04-19","time":"09:15","grade":"🔵","title":"LeCun 批评 AI 导致失业论","source":"@AYi_AInotes","sourceUrl":"https://x.com/AYi_AInotes/status/2045669139214442838","domain":"Industry","summary":"Yann LeCun 与 Anthropic CEO 对 AI 就业影响的观点分歧。","status":"skipped","routeImpact":"","insight":"跳过原因：行业观点争鸣，非技术路线信号。","pushCount":1,"alexStatus":"unread","id":"ps_20260419_0915_004","shortId":"P770"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1616,7 +1621,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-18 15:19';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-19 09:20';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
