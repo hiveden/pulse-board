@@ -1400,6 +1400,9 @@ const DATA = [
   {"date":"2026-04-19","time":"21:15","grade":"🔵","title":"isitagentready.com：测试网站对AI代理的友好度","source":"@dingyi","sourceUrl":"https://x.com/dingyi/status/2045834309068869770","domain":"Tool","summary":"isitagentready.com是一个新工具，用于测试网站是否对AI代理友好，可以帮助开发者评估和优化其网站在代理环境下的兼容性。","status":"skipped","routeImpact":"辅助工具，非方法论或架构信号。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260419_2115_013","shortId":"P790"},
   {"date":"2026-04-19","time":"21:15","grade":"🔵","title":"Claude-Opus-4.7视觉能力测试报告","source":"@karminski3","sourceUrl":"https://x.com/karminski3/status/2045785559516262778","domain":"Model","summary":"测试显示，Claude-Opus-4.7在视觉能力（如颜色识别和空间理解）上有显著提升，适合多模态前端设计，但在算法实现等硬实力测试上有所下降。","status":"skipped","routeImpact":"模型能力评测，属于产品层面信息。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260419_2115_014","shortId":"P791"},
   {"date":"2026-04-19","time":"21:15","grade":"🔵","title":"AI生产力悖论：效率提升未带来经济增长","source":"@AYi_AInotes","sourceUrl":"https://x.com/AYi_AInotes/status/2045831888330248408","domain":"Industry News","summary":"观点认为，尽管AI将白领工作效率提升10倍，但经济并未相应增长，因为多数任务是“无效忙碌”。生产力红利被内部政治和表演式工作所吸收，需要变革激励机制才能将AI红利转化为社会财富。","status":"skipped","routeImpact":"宏观经济与社会观察，非具体技术路线信号。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260419_2115_015","shortId":"P792"},
+  {"date":"2026-04-20","time":"09:15","grade":"🔴","title":"[第17次推送] Agent 架构核心转向 \"Harness Layer\"","source":"@dotey, @swyx","sourceUrl":"https://x.com/dotey","domain":"Agent Architecture","summary":"自 Vercel 开源 Open Agents 以来，Harness Layer 已成为 Agent 架构的核心共识，开发模式从模型中心转向系统中心。","status":"pushed","routeImpact":"要求 Alex 学习重心从模型选择转向 Harness Layer 的设计与实现。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260420_0915_000","shortId":"P793"},
+  {"date":"2026-04-20","time":"09:15","grade":"🔴","title":"[新信号] Claude Opus 4.7 变相涨价，成本模型发生变化","source":"@simonw","sourceUrl":"https://x.com/simonw/status/2046029612820594962","domain":"Context Engineering","summary":"Opus 4.7 对文本和图像消耗更多 token，相当于在定价不变下大幅涨价，影响依赖该模型的项目成本。","status":"pushed","routeImpact":"要求 Alex 重新评估模型选型或优化 token 使用策略以控制成本。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260420_0915_001","shortId":"P794"},
+  {"date":"2026-04-20","time":"09:15","grade":"🟡","title":"[新信号] 国产大模型 DeepSeek V4 即将发布","source":"@xiangxiang103","sourceUrl":"https://x.com/xiangxiang103/status/2046017521602703383","domain":"Model","summary":"DeepSeek V4 具备 1M token 上下文、稀疏 MoE 等特性，在性能上有显著优化。","status":"pushed","routeImpact":"为需要大规模上下文的 Agent 应用提供了新的、可能更具性价比的国产模型选择。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260420_0915_002","shortId":"P795"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1643,7 +1646,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-19 21:18';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-20 09:18';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
