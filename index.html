@@ -1493,6 +1493,14 @@ const DATA = [
   {"date":"2026-04-23","time":"09:15","grade":"🔵","title":"飞书AI任务系统教程","source":"@xiangxiang103","sourceUrl":"https://x.com/xiangxiang103/status/2047113570559901706","domain":"Tool","summary":"教程分享了如何使用飞书CLI通过自然语言建表、创建自动化和看板。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_0915_006","shortId":"P883"},
   {"date":"2026-04-23","time":"09:15","grade":"🔵","title":"Obsidian手机剪藏更新","source":"@xiangxiang103","sourceUrl":"https://x.com/xiangxiang103/status/2047107921889444105","domain":"Tool","summary":"Obsidian Web Clipper新增手机阅读模式支持。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_0915_007","shortId":"P884"},
   {"date":"2026-04-23","time":"09:15","grade":"🔵","title":"Claude代码完整备忘单","source":"@om_patel5","sourceUrl":"https://x.com/om_patel5/status/2047119303804088713","domain":"Tool","summary":"发布了Claude代码工具的全面备忘单。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_0915_008","shortId":"P885"},
+  {"date":"2026-04-23","time":"12:15","grade":"🔵","title":"OpenAI Image-2-Thinking 图像代理模型","source":"@swyx","sourceUrl":"https://x.com/swyx/status/2047140362771132544","domain":"产品发布","summary":"OpenAI 推出图像生成代理模型，支持搜索和 Photoshop 工具迭代优化","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_1215_000","shortId":"P886"},
+  {"date":"2026-04-23","time":"12:15","grade":"🔵","title":"Bloome Agent 协作工具","source":"@op7418","sourceUrl":"https://x.com/op7418/status/2047135982370312509","domain":"产品发布","summary":"支持本地和云端 Agent 群组协作的社交产品","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_1215_001","shortId":"P887"},
+  {"date":"2026-04-23","time":"12:15","grade":"🔵","title":"Codepilot 0.53.0 更新","source":"@op7418","sourceUrl":"https://x.com/op7418/status/2047134047454077177","domain":"工具更新","summary":"支持 GPT Image 2.0 和 Nano Banana 2 模型集成","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_1215_002","shortId":"P888"},
+  {"date":"2026-04-23","time":"12:15","grade":"🔵","title":"ChatGPT for Clinicians 发布","source":"@frxiaobei","sourceUrl":"https://x.com/frxiaobei/status/2047162147063595366","domain":"产品发布","summary":"OpenAI 推出医疗垂类 Agent，集成 HIPAA 与 CME 学分","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_1215_003","shortId":"P889"},
+  {"date":"2026-04-23","time":"12:15","grade":"🔵","title":"Cursor 自研模型争议","source":"@fankaishuoai","sourceUrl":"https://x.com/fankaishuoai/status/2047160135035031713","domain":"行业八卦","summary":"Cursor Composer 2 实际使用 Kimi 2.5，未披露来源引发批评","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_1215_004","shortId":"P890"},
+  {"date":"2026-04-23","time":"12:15","grade":"🔵","title":"Claude-reflect 记忆工具","source":"@axiaisacat","sourceUrl":"https://x.com/axiaisacat/status/2047123500444315961","domain":"工具发布","summary":"自动捕捉 Claude Code 会话纠正并生成 CLAUDE.md，876 星","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_1215_005","shortId":"P891"},
+  {"date":"2026-04-23","time":"12:15","grade":"🔵","title":"Qwen3.5-Omni 技术报告","source":"@vista8","sourceUrl":"https://x.com/vista8/status/2047126221163794919","domain":"模型发布","summary":"阿里多模态模型报告，音频数据占训练数据一半","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_1215_006","shortId":"P892"},
+  {"date":"2026-04-23","time":"12:15","grade":"🔵","title":"Hermes Agent 8 个实用项目","source":"@Jason23818126","sourceUrl":"https://x.com/Jason23818126/status/2047148464409379070","domain":"竞品动态","summary":"安全防护、多搜索引擎插件、技能工厂等工作空间项目","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260423_1215_007","shortId":"P893"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1736,7 +1744,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-23 09:18';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-23 12:27';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
