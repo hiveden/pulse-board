@@ -1558,6 +1558,12 @@ const DATA = [
   {"date":"2026-04-25","time":"12:15","grade":"🔵","title":"X曝光收入翻倍","source":"@wangray","sourceUrl":"https://x.com/wangray/status/2047876702718804210","domain":"平台政策","summary":"社交平台创作者收入变化，与技术路线无关。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260425_1215_014","shortId":"P948"},
   {"date":"2026-04-25","time":"12:15","grade":"🔵","title":"Cursor AI赞助","source":"@xiangxiang103","sourceUrl":"https://x.com/xiangxiang103/status/2047834967326298217","domain":"行业动态","summary":"重复信息，信息量低于已选择的@frxiaobei的推文。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260425_1215_015","shortId":"P949"},
   {"date":"2026-04-25","time":"12:15","grade":"🔵","title":"Claude生成GTA6游戏","source":"@om_patel5","sourceUrl":"https://x.com/om_patel5/status/2047849798162682260","domain":"应用演示","summary":"展示AI编码能力的应用案例，但不构成需要调整学习路线的信号。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260425_1215_016","shortId":"P950"},
+  {"date":"2026-04-25","time":"21:18","grade":"🔴","title":"Gemini 3.1 Pro 在部分任务上达到 SOTA 水平，可能优于 GPT-5.5/Opus 4.7","source":"@OfficialLoganK","sourceUrl":"https://x.com/OfficialLoganK/status/2048003614019551586","domain":"Model Capability","summary":"报告称 Gemini 3.1 Pro 在特定有用任务上表现出巨大的原始智能，达到了巨型模型的 SOTA 水平。","status":"pushed","routeImpact":"模型能力出现重大突破，可能影响下一代 Agent 的基础模型选型和能力上限评估。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_000","shortId":"P951"},
+  {"date":"2026-04-25","time":"21:18","grade":"🟡","title":"基于信号的 Agent 轨迹评估方法出现，可低成本优化 Agent","source":"@akshay_pachaar","sourceUrl":"https://x.com/akshay_pachaar/status/2048025083659370668","domain":"Agent Methodology","summary":"DigitalOcean 论文提出基于信号的轨迹采样方法，从80k代理交互中选出高价值100条审阅，避免LLM成本，提高代理优化效率达82%。","status":"pushed","routeImpact":"提供了一种不依赖 LLM 的、低成本的 Agent 轨迹评估和优化方法，对 Agent 开发和调试有直接借鉴意义。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_001","shortId":"P952"},
+  {"date":"2026-04-25","time":"21:18","grade":"🟡","title":"Agent 上下文的四层结构化模型被提出","source":"@li9292","sourceUrl":"https://x.com/li9292/status/2048022840147062801","domain":"Context Engineering","summary":"Barret李靖提出AI Agent工作上下文的四层结构模型：情境、语义、程序化和工作记忆，强调情境重构和任务驱动编排。","status":"pushed","routeImpact":"为 Context Engineering 提供了更体系化的理论框架，与 T2 学习主题高度相关。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_002","shortId":"P953"},
+  {"date":"2026-04-25","time":"21:18","grade":"🔵","title":"OpenAI Codex 推出系统级语音输入功能","source":"@frxiaobei","sourceUrl":"https://x.com/frxiaobei/status/2048016028991668467","domain":"Tooling","summary":"ChatGPT 订阅用户可在桌面任意处按热键语音输入，直接转文字至任何文本框。","status":"skipped","routeImpact":"","insight":"工具/功能更新，不直接影响核心技术路线学习。","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_003","shortId":"P954"},
+  {"date":"2026-04-25","time":"21:18","grade":"🔵","title":"DeepSeek V4 模型发布延迟","source":"@xiongchun007","sourceUrl":"https://x.com/xiongchun007/status/2048016484748947770","domain":"Industry News","summary":"DeepSeek V4模型发布被推迟，可能与特定任务开发有关。","status":"skipped","routeImpact":"","insight":"模型发布动态，非技术信号。","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_004","shortId":"P955"},
+  {"date":"2026-04-25","time":"21:18","grade":"🔵","title":"shadcn/ui 新增按钮指针样式选项","source":"@shadcn","sourceUrl":"https://x.com/shadcn/status/2047992356390027604","domain":"Tooling","summary":"shadcn/ui 允许在初始化时或通过 CLI 命令启用按钮的 cursor: pointer 样式。","status":"skipped","routeImpact":"","insight":"UI库细节更新，与技术路线无关。","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_005","shortId":"P956"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1801,7 +1807,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-25 12:18';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-25 21:18';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
