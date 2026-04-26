@@ -1564,6 +1564,8 @@ const DATA = [
   {"date":"2026-04-25","time":"21:18","grade":"🔵","title":"OpenAI Codex 推出系统级语音输入功能","source":"@frxiaobei","sourceUrl":"https://x.com/frxiaobei/status/2048016028991668467","domain":"Tooling","summary":"ChatGPT 订阅用户可在桌面任意处按热键语音输入，直接转文字至任何文本框。","status":"skipped","routeImpact":"","insight":"工具/功能更新，不直接影响核心技术路线学习。","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_003","shortId":"P954"},
   {"date":"2026-04-25","time":"21:18","grade":"🔵","title":"DeepSeek V4 模型发布延迟","source":"@xiongchun007","sourceUrl":"https://x.com/xiongchun007/status/2048016484748947770","domain":"Industry News","summary":"DeepSeek V4模型发布被推迟，可能与特定任务开发有关。","status":"skipped","routeImpact":"","insight":"模型发布动态，非技术信号。","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_004","shortId":"P955"},
   {"date":"2026-04-25","time":"21:18","grade":"🔵","title":"shadcn/ui 新增按钮指针样式选项","source":"@shadcn","sourceUrl":"https://x.com/shadcn/status/2047992356390027604","domain":"Tooling","summary":"shadcn/ui 允许在初始化时或通过 CLI 命令启用按钮的 cursor: pointer 样式。","status":"skipped","routeImpact":"","insight":"UI库细节更新，与技术路线无关。","pushCount":1,"alexStatus":"unread","id":"ps_20260425_2118_005","shortId":"P956"},
+  {"date":"2026-04-26","time":"09:16","grade":"🟡","title":"技能仓库推荐","source":"@petergyang","sourceUrl":"https://x.com/petergyang/status/2048190683782201767","domain":"社区趋势","summary":"Peter Yang询问设计、编码、产品等领域的好的人类精选技能仓库，反映了对高质量、精炼学习资源的社区需求。","status":"skipped","routeImpact":"","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260426_0916_000","shortId":"P957"},
+  {"date":"2026-04-26","time":"09:16","grade":"🟡","title":"Claude计费漏洞曝光","source":"@om_patel5","sourceUrl":"https://x.com/om_patel5/status/2048204411986469232","domain":"风险提示/竞品信号","summary":"一个包含HERMES.md字符串的Git提交，会导致Claude意外切换到API计费模式。Anthropic确认为bug但拒绝退款。","status":"pushed","routeImpact":"对使用Claude API的开发者是直接的成本风险预警，并暗示了激烈的厂商竞争。","insight":"HERMES.md作为触发词，暗示了Anthropic可能在系统性地追踪与NousResearch Hermes Agent相关的活动。","pushCount":1,"alexStatus":"unread","id":"ps_20260426_0916_001","shortId":"P958"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1807,7 +1809,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-04-25 21:18';
+  document.getElementById('metaText').textContent = '最后同步：2026-04-26 09:17';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
