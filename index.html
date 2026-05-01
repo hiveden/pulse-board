@@ -1707,6 +1707,9 @@ const DATA = [
   {"date":"2026-05-01","time":"12:15","grade":"🔵","title":"华为 AI 芯片销售额预计达 120 亿美元","source":"@xiongchun007","sourceUrl":"https://x.com/xiongchun007/status/2050049679027810424","domain":"市场动态","summary":"路透社报道华为 AI 芯片销售预期。","status":"skipped","routeImpact":"无","insight":"宏观市场新闻，非工程实践信号","pushCount":1,"alexStatus":"unread","id":"ps_20260501_1215_008","shortId":"P1097"},
   {"date":"2026-05-01","time":"12:15","grade":"🔵","title":"苹果 App Store 意外泄露 Claude.md 文件","source":"@li9292","sourceUrl":"https://x.com/li9292/status/2050046697196413001","domain":"行业八卦","summary":"苹果 Support 应用更新中意外包含了一个名为 Claude.md 的文件。","status":"skipped","routeImpact":"无","insight":"大公司失误，与技术路线无关","pushCount":1,"alexStatus":"unread","id":"ps_20260501_1215_009","shortId":"P1098"},
   {"date":"2026-05-01","time":"12:15","grade":"🔵","title":"文心 5.1 Preview 登顶 LMArena 文本榜","source":"@zstmfhy","sourceUrl":"https://x.com/zstmfhy/status/2050025941951484020","domain":"模型发布","summary":"百度发布文心 5.1 Preview，在 LMArena 文本榜单表现出色。","status":"skipped","routeImpact":"无","insight":"模型发布与评测，不符合推送标准","pushCount":1,"alexStatus":"unread","id":"ps_20260501_1215_010","shortId":"P1099"},
+  {"date":"2026-05-01","time":"18:15","grade":"🟡","title":"GEPA优化代理","source":"@akshay_pachaar","sourceUrl":"https://x.com/akshay_pachaar/status/2050114132515623168","domain":"Agent/Engineering","summary":"Berkeley GEPA技术无需GPU即优于GRPO，提升基准10分，通过分析完整rollout诊断失败并针对性重写提示，而非稀疏奖励。适用于多模块工作流，DSPy已集成，强调提示工程优于全RL微调。","status":"pushed","routeImpact":"提示工程优化代理性能的新方向，值得关注。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260501_1815_000","shortId":"P1100"},
+  {"date":"2026-05-01","time":"18:15","grade":"🟡","title":"Crabbox远程测试","source":"@steipete","sourceUrl":"https://x.com/steipete/status/2050140050168451286","domain":"Agent/Tooling","summary":"发布Crabbox 0.1.0工具，支持AWS/Hetzner远程Linux测试箱，自动同步代码、预热实例并闲置释放。解决多代理测试资源耗尽问题，提升开发效率。","status":"pushed","routeImpact":"多代理开发测试效率工具，可尝试使用。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260501_1815_001","shortId":"P1101"},
+  {"date":"2026-05-01","time":"18:15","grade":"🟡","title":"AI过度优化开发计划风险","source":"@xicilion","sourceUrl":"https://x.com/xicilion/status/2050131104951308464","domain":"AI/Workflow","summary":"AI在编写开发计划时会将‘可追溯’作为核心诉求，为实现它不惜牺牲系统性能和简洁，导致业务逻辑复杂化。该观点警示开发者需平衡AI生成计划，避免过度复杂。","status":"pushed","routeImpact":"提醒在AI辅助开发中需注意平衡，避免过度工程化。","insight":"","pushCount":1,"alexStatus":"unread","id":"ps_20260501_1815_002","shortId":"P1102"},
 ];
 
 // ─── State ──────────────────────────────────────────────────────────────────
@@ -1950,7 +1953,7 @@ function updateStats() {
   document.getElementById('sYellow').textContent = DATA.filter(d=>d.grade==='🟡').length;
   document.getElementById('sSkipped').textContent = DATA.filter(d=>d.status==='skipped').length;
   document.getElementById('sConfirmed').textContent = DATA.filter(d=>getS(d.id)==='confirmed').length;
-  document.getElementById('metaText').textContent = '最后同步：2026-05-01 12:19';
+  document.getElementById('metaText').textContent = '最后同步：2026-05-01 18:19';
 }
 
 // ─── Events ─────────────────────────────────────────────────────────────────
